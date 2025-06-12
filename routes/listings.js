@@ -49,6 +49,8 @@ router.get("/", async (req, res) => {
               price: 1,
               review_scores: 1,
               address: 1,
+              bedrooms: 1,
+              property_type: 1,
             },
           },
         ])
@@ -63,6 +65,8 @@ router.get("/", async (req, res) => {
           price: 1,
           review_scores: 1,
           address: 1,
+          bedrooms: 1,
+          property_type: 1,
         })
         .toArray();
     }

@@ -55,6 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="card-text"><strong>Location:</strong> ${
           item.address?.market || "N/A"
         }</p>
+        <p class="card-text"><strong>Bedrooms:</strong> ${item.bedrooms ?? "N/A"}</p>
+        <p class="card-text"><strong>Property Type:</strong> ${
+        item.property_type ?? "N/A"
+        }</p>
         <p class="card-text"><strong>Daily Price:</strong> $${
           item.price || "N/A"
         }</p>
