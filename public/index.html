@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="text-center bg-primary text-white py-4 w-100">
+      <h1>Welcome to StayFinder</h1>
+    </div>
+
+    <!-- Filtering section -->
+    <div class="container mt-4">
+      <div class="card shadow-sm p-4 rounded-4 mb-4 bg-light">
+        <!-- Location Input -->
+        <form id="searchForm" class="row g-3 align-items-center">
+          <div class="col-md-4">
+            <label for="location" class="form-label fw-bold"
+              >Location <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              id="location"
+              class="form-control form-control-lg"
+              placeholder="Enter a city or area"
+              required
+            />
+          </div>
+          <!-- Property Type dropdown -->
+          <div class="col-md-3">
+            <label for="propertyType" class="form-label fw-bold"
+              >Property Type</label
+            >
+            <select id="propertyType" class="form-select form-select-lg">
+              <option value="">-- Optional --</option>
+              <option value="Apartment">Apartment</option>
+              <option value="House">House</option>
+              <option value="Condominium">Condominium</option>
+            </select>
+          </div>
+
+          <!-- Bedrooms dropdown -->
+          <div class="col-md-3">
+            <label for="bedrooms" class="form-label fw-bold">Bedrooms</label>
+            <select id="bedrooms" class="form-select form-select-lg">
+              <option value="">-- Optional --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8+">8+</option>
+            </select>
+          </div>
+
+          <!-- Search button -->
+          <div class="col-md-2 text-end">
+            <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <hr class="my-4" />
+
+      <!-- Result section -->
+      <div id="noResultsMessage" class="text-center text-muted mt-3"></div>
+      <div id="listingsContainer"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
