@@ -9,6 +9,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const listingId = urlParams.get("listing_id");
   document.getElementById("listingId").value = listingId;
 
+  // Date Constraints
+  // Set the minimum date for start and end date inputs to today
+  const startInput = document.getElementById("startDate");
+  const endInput = document.getElementById("endDate");
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const format = (d) => d.toISOString().split("T")[0];
+  const todayStr = format(today);
+
+  startInput.min = todayStr;
+  endInput.min = todayStr;
+
+  startInput.addEventListener("change", () => {
+    const selectedStart = new Date(startInput.value);
+    if (startInput.value) {
+      endInput.min = startInput.value;
+      if (new Date(endInput.value) < selectedStart) {
+        endInput.value = "";
+      }
+    } else {
+      endInput.min = todayStr;
+    }
+  });
+
   // When the form is submitted
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
